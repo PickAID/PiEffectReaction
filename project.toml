@@ -1,0 +1,93 @@
+schema_version = 1
+template_version = "1.20.1-template-1.1.0"
+
+[mod]
+mod_id = "pieffectreaction"
+mod_name = "PiEffectReaction"
+version = "0.0.1"
+version_suffix = "dev"
+group = "com.mihono.pickaid"
+authors = ["PickAID Team"]
+license = "MIT"
+description = "Effect reaction bridge for the Pi stack.\nConnects entity effect signals with bounded data-driven reaction plans."
+credits = "None"
+issue_tracker_url = "https://github.com/PickAID/PiEffectReaction/issues"
+
+[features]
+jei = false
+curios = false
+geckolib = false
+player_animator = false
+mixin_extras = false
+
+[languages]
+kotlin = false
+
+[dev_packs]
+# JEI + Jade for recipe lookup and in-world inspection during development.
+basic = false
+# AppleSkin on its own when you only want hunger and saturation HUD help.
+appleskin = false
+# Target Dummy + AttributeFix + Max Health Fix for combat balancing checks.
+combat = false
+# Curios runtime when you need accessory slot behavior in local runs.
+curios = false
+# Caelus + Iron's Spellbooks for spell and attribute smoke testing.
+spell = false
+
+[overrides]
+
+[repositories]
+blamejared = "https://maven.blamejared.com/"
+tterrag = "https://maven.tterrag.com/"
+sponge = "https://repo.spongepowered.org/maven"
+geckolib = "https://dl.cloudsmith.io/public/geckolib3/geckolib/maven/"
+curios = "https://maven.theillusivec4.top/"
+kosmx = "https://maven.kosmx.dev/"
+cursemaven = "https://cursemaven.com"
+architectury = "https://maven.architectury.dev"
+latvian = "https://maven.latvian.dev/releases"
+jitpack = "https://jitpack.io"
+mihono = "https://maven.mihono.cn/repository/pickaid1201/"
+
+[dependencies]
+
+# PiEffectReaction is the seam between entity runtime state and data-driven
+# reaction plans. Downstream consumers should see both compile surfaces.
+[dependencies.api]
+pibrary = { notation = "com.mihono.pickaid:pibrary:0.0.10-dev", transitive = false }
+pidatagraph = { notation = "com.mihono.pickaid:pidatagraph:0.0.5-dev", transitive = false }
+
+# Normal installations should not require users to chase the two sibling Pi
+# foundations manually. Keep these ranges narrow until the first production
+# consumer proves the API surface.
+[dependencies.jarjar]
+pibrary = { notation = "com.mihono.pickaid:pibrary:0.0.10-dev", range = "[0.0.10-dev,0.1.0)", transitive = false }
+pidatagraph = { notation = "com.mihono.pickaid:pidatagraph:0.0.5-dev", range = "[0.0.5-dev,0.1.0)", transitive = false }
+
+[publish]
+maven_url = "https://maven.mihono.cn/repository/pickaid1201/"
+curseforge_project = 0
+modrinth_project = ""
+release_type = "alpha"
+
+[publish.mods]
+release_type = "alpha"
+version_name = "[{mc_version}] {mod_name} {version}"
+display_name = "[{mc_version}] {mod_name} - {version}"
+changelog = ""
+changelog_file = "CHANGELOG.md"
+changelog_section = "version"
+changelog_type = "markdown"
+game_versions = ["1.20.1"]
+loaders = ["forge"]
+
+[publish.modrinth]
+project = ""
+
+[publish.curseforge]
+project = 0
+
+[naming]
+archive_name = "pieffectreaction"
+jar_format = "{archive_name}-{mc_version}-{version}"
