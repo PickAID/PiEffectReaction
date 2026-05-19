@@ -1,5 +1,12 @@
 # Changelog
 
+## 0.0.2
+
+- Add P0 signal reaction registration contracts.
+- Add bounded reaction runtime with signal budget, recursion guard, and trace output.
+- Add threshold reaction foundation.
+- Update Pibrary and PiDataGraph dependencies to the published P0 artifacts.
+
 ## 0.0.1-dev
 
 - Initialize the Forge 1.20.1 project skeleton.

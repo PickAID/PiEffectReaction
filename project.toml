@@ -4,8 +4,8 @@ template_version = "1.20.1-template-1.1.0"
 [mod]
 mod_id = "pieffectreaction"
 mod_name = "PiEffectReaction"
-version = "0.0.1"
-version_suffix = "dev"
+version = "0.0.2"
+version_suffix = ""
 group = "com.mihono.pickaid"
 authors = ["PickAID Team"]
 license = "MIT"
@@ -55,15 +55,21 @@ mihono = "https://maven.mihono.cn/repository/pickaid1201/"
 # PiEffectReaction is the seam between entity runtime state and data-driven
 # reaction plans. Downstream consumers should see both compile surfaces.
 [dependencies.api]
-pibrary = { notation = "com.mihono.pickaid:pibrary:0.0.10-dev", transitive = false }
-pidatagraph = { notation = "com.mihono.pickaid:pidatagraph:0.0.5-dev", transitive = false }
+pibrary = { notation = "com.mihono.pickaid:pibrary:0.0.11-dev", transitive = false }
+pidatagraph = { notation = "com.mihono.pickaid:pidatagraph:0.0.6", transitive = false }
 
 # Normal installations should not require users to chase the two sibling Pi
 # foundations manually. Keep these ranges narrow until the first production
 # consumer proves the API surface.
 [dependencies.jarjar]
-pibrary = { notation = "com.mihono.pickaid:pibrary:0.0.10-dev", range = "[0.0.10-dev,0.1.0)", transitive = false }
-pidatagraph = { notation = "com.mihono.pickaid:pidatagraph:0.0.5-dev", range = "[0.0.5-dev,0.1.0)", transitive = false }
+pibrary = { notation = "com.mihono.pickaid:pibrary:0.0.11-dev", range = "[0.0.11-dev,0.1.0)", transitive = false }
+pidatagraph = { notation = "com.mihono.pickaid:pidatagraph:0.0.6", range = "[0.0.6,0.1.0)", transitive = false }
+
+[dependencies.test_implementation]
+junit_jupiter = "org.junit.jupiter:junit-jupiter:5.10.2"
+
+[dependencies.test_runtime_only]
+junit_platform_launcher = "org.junit.platform:junit-platform-launcher:1.10.2"
 
 [publish]
 maven_url = "https://maven.mihono.cn/repository/pickaid1201/"

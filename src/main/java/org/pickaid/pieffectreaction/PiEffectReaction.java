@@ -1,6 +1,7 @@
 package org.pickaid.pieffectreaction;
 
 import com.mojang.logging.LogUtils;
+import java.util.Objects;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraftforge.fml.common.Mod;
 import org.slf4j.Logger;
@@ -15,6 +16,6 @@ public final class PiEffectReaction {
     }
 
     public static ResourceLocation id(String path) {
-        return new ResourceLocation(MOD_ID, path);
+        return Objects.requireNonNull(ResourceLocation.tryParse(MOD_ID + ":" + path));
     }
 }

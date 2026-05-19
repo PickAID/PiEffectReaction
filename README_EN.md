@@ -18,9 +18,17 @@ The implementation should still keep a thin core:
 - `runtime` for server-authoritative queues, guards, cooldowns, and diagnostics.
 - `bridge` for Pibrary, PiDataGraph, PiEngine, and visual-pack integration.
 
-## Current Scope
+## P0 Scope
 
-This repository is only initialized with the project skeleton and package boundaries. It intentionally does not ship half-finished reaction APIs before the first production slice proves the exact entity-effect and data-graph integration.
+The current version provides the minimal reaction contract and server runtime base:
+
+- `PiReactions.on(signalType)` registers typed signal reactions.
+- `PiReactionBudget` limits signal count and recursive depth.
+- `PiReactionRuntime` compiles registrations and dispatches matching reactions by priority.
+- `PiReactionTrace` records emitted signal ids and budget/cycle guard blocks.
+- `PiThresholdReaction` provides the first threshold trigger shape.
+
+P0 does not own entity effect state, mutate the world directly, replace PiEngine state ownership, or turn PiDataGraph into a global signal loop.
 
 ## Build
 
