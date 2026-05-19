@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.0.3
+
+- Consume the formal Pibrary 0.0.11 P0 runtime artifact.
+
 ## 0.0.2
 
 - Add P0 signal reaction registration contracts.
